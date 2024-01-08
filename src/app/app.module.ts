@@ -10,12 +10,16 @@ import { PlayersPageComponent } from './pages/fantasy/players-page/players-page.
 import { TeamPageComponent } from './pages/fantasy/team-page/team-page.component';
 import { LeaderboardPageComponent } from './pages/fantasy/leaderboard-page/leaderboard-page.component';
 import { HomePageComponent } from './pages/fantasy/home-page/home-page.component';
+import { AppRoutingModule } from './app-routing.modules';
+import { FramePageComponent } from './pages/master/frame-page/frame-page.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
+    FramePageComponent,
     LoginPageComponent,
+    NavbarComponent,
     ResetPasswordPageComponent,
     SignUpPageComponent,
     PlayersPageComponent,
@@ -24,9 +28,10 @@ import { HomePageComponent } from './pages/fantasy/home-page/home-page.component
     HomePageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

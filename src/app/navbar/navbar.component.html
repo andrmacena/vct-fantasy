@@ -6,11 +6,11 @@
           <span class="uk-icon uk-margin-small-right" uk-icon="icon: world; ratio: 2.5"></span>
         </a>
         <ul class="uk-navbar-nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Meu time</a></li>
-          <!-- <li><a href="#">Minha Liga</a></li> -->
-          <li><a href="#">Leaderboards</a></li>
-          <li><a href="#">Players</a></li>
+          <li><a [routerLink]="['/']">Home</a></li>
+          <li><a [routerLink]="['/myteam']">Meu time</a></li>
+          <!-- <li><a [routerLink]="['/']">Minha Liga</a></li> -->
+          <li><a [routerLink]="['/leaderboard']">Leaderboards</a></li>
+          <li><a [routerLink]="['/players']">Players</a></li>
         </ul>
       </div>
       <div class="uk-navbar-right">
