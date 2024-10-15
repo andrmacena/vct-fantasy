@@ -13,6 +13,7 @@ import { HomePageComponent } from './pages/fantasy/home-page/home-page.component
 import { AppRoutingModule } from './app-routing.modules';
 import { FramePageComponent } from './pages/master/frame-page/frame-page.component';
 import { AuthService } from './services/auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AuthService } from './services/auth.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [AuthService],
