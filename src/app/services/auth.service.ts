@@ -1,9 +1,8 @@
-import { Injectable } from '@angular/core';
-import { Router, CanActivate } from '@angular/router';
-// import { Security } from '../utils/security.util';
+import { Injectable, inject } from '@angular/core';
+import { Router, CanActivateFn, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
 @Injectable()
-export class AuthService implements CanActivate {
+export class AuthService   {
     constructor(private router: Router) {
     }
 
@@ -17,3 +16,9 @@ export class AuthService implements CanActivate {
         return true;
     }
 }
+
+
+const canActivateApp: CanActivateFn =
+    (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
+        return inject(AuthService).canActivate()
+    }
