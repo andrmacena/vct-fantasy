@@ -1,27 +1,44 @@
-# VctFantasy
+<h1 align="center">
+VCT Fantasy
+</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+## 💻 Technologies
+
+This project was developed with the following technologies:
+
+- [Node.js](https://nodejs.org/en/) 
+- [Angular](https://angular.io/)
+
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/andrmacena/semanaOmnistack-11-web?color=%2304D361">
+
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/andrmacena/semanaOmnistack-11-web">
+	
+  <a href="https://www.linkedin.com/in/andr%C3%A9-macena-15275b12b/">
+    <img alt="Made by André Macena" src="https://img.shields.io/badge/made%20by-andrmacena-%2304D361">
+  </a>
+
+  <a href="https://github.com/andrmacena/semanaOmnistack-11-web/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/andrmacena/semanaOmnistack-11-web">
+  </a>
+
+  <a href="https://github.com/andrmacena/semanaOmnistack-11-web/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/andrmacena/semanaOmnistack-11-web">
+  </a>
+
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
+</p>
+
+## 🎯 Project
+
+en-es<br/>
+A fantasy game of the Valorant Champions Tour (VCT).
+
+pt-br<br/>
+Um jogo fantasia do Valorant Champions Tour (VCT).
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Made by André Macena 🔥 [Get in touch!](https://www.linkedin.com/in/andr%C3%A9-macena-15275b12b/)
