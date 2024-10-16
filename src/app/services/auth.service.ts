@@ -7,7 +7,7 @@ export class AuthService   {
     }
 
     canActivate() {
-        const token = false;
+        const token = true;
         if (!token) {
             this.router.navigate(['/login']);
             return false;
