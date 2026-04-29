@@ -14,7 +14,13 @@ export class DataService {
 
     getPlayers() {
 
-        return this.http.get<any[]>('http://localhost:3000/v1/player')
+        return this.http.get<any[]>('http://localhost:3000/v1/players')
+
+    }
+
+    getTeam() {
+
+        return this.http.get<any[]>('http://localhost:3000/v1/teams')
 
     }
 }
