@@ -9,22 +9,16 @@
 </div>
 <div class="uk-container">
     <div uk-grid >
-        <div class="uk-width-1-3" *ngFor="let player of players | async">
+        <div class="uk-width-1-4" *ngFor="let player of players | async">
             <div class="uk-card uk-card-muted" >
                 <div class="uk-card-media-top">
                     <br>
-                    <p class="uk-text-center"><img src="//owcdn.net/img/64169733ae9f1.png" class="uk-border-circle" alt=""/></p>
+                    <p class="uk-text-center"><img src="{{player.urlProfile}}" class="uk-border-circle" alt=""/></p>
                 </div>
             </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">{{player.nick}}</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum atque, possimus debitis dolore provident assumenda, veritatis, totam ea alias pariatur molestias! Corporis laborum error, ut nobis excepturi voluptas dolore enim.</p>
-                <p class="uk-text-center">
-                    <a href="#" class="uk-button uk-button-default">
-                        <span class="uk-icon uk-margin-small-right" uk-icon="icon: info"></span>
-                        Visualizar
-                    </a>
-                </p>
+            <div class="uk-card-body uk-padding-remove">
+                <h3 class="uk-card-title uk-text-center">{{player.nick}}</h3>
+                <p class="uk-text-center">Pontuação geral última semana: {{player.score}}</p>
             </div>
         </div>
     </div>
