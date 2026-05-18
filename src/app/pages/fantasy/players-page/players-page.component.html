@@ -2,22 +2,24 @@
     <nav class="uk-navbar-container uk-margin-small-top uk-margin-small-bottom" uk-navbar>
         <div class="uk-navbar-center">
             <ul class="uk-navbar-nav">
-                <li class="uk-active">Filtro aqui</li>
+                <div class="uk-margin">
+                    <input class="uk-input" type="text" placeholder="Input" aria-label="Input">
+                </div>
             </ul>
         </div>
     </nav>
 </div>
 <div class="uk-container">
-    <div uk-grid >
+    <div uk-grid>
         <div class="uk-width-1-4" *ngFor="let player of players | async">
-            <div class="uk-card uk-card-muted" >
+            <div class="uk-card uk-card-muted">
                 <div class="uk-card-media-top">
                     <br>
-                    <p class="uk-text-center"><img src="{{player.urlProfile}}" class="uk-border-circle" alt=""/></p>
+                    <p class="uk-text-center"><img [src]="player.urlProfile ? player.urlProfile : 'assets/avatar_placeholder.png'" class="uk-border-circle" alt="Foto jogador" width="200px" height="200px" /></p>
                 </div>
             </div>
             <div class="uk-card-body uk-padding-remove">
-                <h3 class="uk-card-title uk-text-center">{{player.nick}}</h3>
+                <h3 class="uk-card-title uk-text-center">{{player.nickname}}</h3>
                 <p class="uk-text-center">Pontuação geral última semana: {{player.score}}</p>
             </div>
         </div>
