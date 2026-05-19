@@ -1,5 +1,4 @@
 [[redirects]]
-from = "/signup"
-to = "/src/app/pages/account/sign-up-page/sign-up-page.component.html"
-status = 404
-force = true
+  from = "/*"
+  to = "/index.html"
+  status = 200
