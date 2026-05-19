@@ -1,0 +1,5 @@
+[[redirects]]
+from = "/signup"
+to = "/src/pages/account/sign-up-page/sign-up-page.component.html"
+status = 200
+force = true
