@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && copy _redirects dist\\vct-fantasy\\_redirects",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "copy": "copy _redirects dist\\vct-fantasy\\_redirects"
   },
   "private": true,
   "dependencies": {
