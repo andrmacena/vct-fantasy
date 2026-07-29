@@ -1,0 +1,252 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: #ECEBF0;
+  background-color: #0B0B10;
+  background-image:
+    linear-gradient(rgba(255, 70, 85, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 70, 85, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+:host * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.vct-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.vct-wrapper {
+  width: 100%;
+  max-width: 420px;
+}
+
+.vct-brand {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.vct-crosshair {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.75rem;
+}
+
+.vct-brand-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ECEBF0;
+  line-height: 1;
+}
+
+.vct-brand-name span {
+  color: #FF4655;
+}
+
+.vct-brand-sub {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #7B7A8E;
+  margin-top: 0.35rem;
+}
+
+.vct-card {
+  background: #18181F;
+  border: 1px solid #2A2A36;
+  border-top: 2px solid #FF4655;
+  border-radius: 4px;
+  padding: 2.25rem 2rem 1.75rem;
+  position: relative;
+}
+
+.vct-card::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 2rem;
+  width: 3rem;
+  height: 2px;
+  background: #FF4655;
+  box-shadow: 0 0 12px rgba(255, 70, 85, 0.25);
+}
+
+.vct-card-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #7B7A8E;
+  margin-bottom: 1.5rem;
+}
+
+.vct-field {
+  margin-bottom: 1rem;
+}
+
+.vct-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7B7A8E;
+  margin-bottom: 0.4rem;
+}
+
+.vct-input-wrap {
+  position: relative;
+}
+
+.vct-input-wrap .uk-form-icon {
+  color: #7B7A8E;
+  transition: color 0.15s ease;
+}
+
+.vct-input-wrap:focus-within .uk-form-icon {
+  color: #FF4655;
+}
+
+.uk-input.vct-input {
+  background: #0F0F15 !important;
+  border: 1px solid #2A2A36 !important;
+  border-radius: 3px !important;
+  color: #ECEBF0 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.9rem !important;
+  padding-left: 2.75rem !important;
+  height: 48px !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.uk-input.vct-input::placeholder {
+  color: #7B7A8E !important;
+  opacity: 0.6;
+}
+
+.uk-input.vct-input:focus {
+  border-color: #FF4655 !important;
+  box-shadow: 0 0 0 3px rgba(255, 70, 85, 0.12) !important;
+  outline: none !important;
+}
+
+.vct-btn-primary {
+  display: block;
+  width: 100%;
+  height: 48px;
+  background: #FF4655 !important;
+  border: none !important;
+  border-radius: 3px !important;
+  color: #fff !important;
+  font-family: 'Rajdhani', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease !important;
+  margin-top: 1.5rem;
+}
+
+.vct-btn-primary:hover {
+  background: #e83b4a !important;
+}
+
+.vct-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.vct-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0 1.25rem;
+}
+
+.vct-divider::before,
+.vct-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #2A2A36;
+}
+
+.vct-divider-text {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7B7A8E;
+  white-space: nowrap;
+}
+
+.vct-btn-outline {
+  display: block;
+  width: 100%;
+  height: 44px;
+  background: transparent !important;
+  border: 1px solid #2A2A36 !important;
+  border-radius: 3px !important;
+  color: #ECEBF0 !important;
+  font-family: 'Rajdhani', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  cursor: pointer;
+  text-align: center;
+  line-height: 42px;
+  text-decoration: none !important;
+  transition: border-color 0.15s ease, color 0.15s ease !important;
+}
+
+.vct-btn-outline:hover {
+  border-color: #FF4655 !important;
+  color: #FF4655 !important;
+}
+
+.vct-forgot {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: #7B7A8E;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.15s ease;
+}
+
+.vct-forgot:hover {
+  color: #FF4655;
+  text-decoration: none;
+}
+
+.vct-footer {
+  text-align: center;
+  margin-top: 1.75rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: #7B7A8E;
+  opacity: 0.6;
+}
+
+.vct-crosshair svg {
+  animation: crosshair-pulse 2.8s ease-in-out infinite;
+}
+
+@keyframes crosshair-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
