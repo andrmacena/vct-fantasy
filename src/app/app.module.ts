@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -10,6 +11,7 @@ import { PlayersPageComponent } from './pages/fantasy/players-page/players-page.
 import { TeamPageComponent } from './pages/fantasy/team-page/team-page.component';
 import { LeaderboardPageComponent } from './pages/fantasy/leaderboard-page/leaderboard-page.component';
 import { HomePageComponent } from './pages/fantasy/home-page/home-page.component';
+import { FilterByNicknamePipe } from './pages/fantasy/players-page/nickname-pipe';
 import { AppRoutingModule } from './app-routing.modules';
 import { FramePageComponent } from './pages/master/frame-page/frame-page.component';
 import { AuthService } from './services/auth.service';
@@ -26,12 +28,14 @@ import { HttpClientModule } from '@angular/common/http';
     PlayersPageComponent,
     TeamPageComponent,
     LeaderboardPageComponent,
-    HomePageComponent
+    HomePageComponent,
+    FilterByNicknamePipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
