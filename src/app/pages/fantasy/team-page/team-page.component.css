@@ -1,0 +1,152 @@
+/* ─────────────────────────────────────────────
+   VCT Fantasy — Team Page
+   Estilos apenas para: timer e header do time
+   ───────────────────────────────────────────── */
+
+/* ── Tokens ── */
+:host {
+  --vct-bg:         #0B0B10;
+  --vct-card:       #18181F;
+  --vct-border:     #2A2A36;
+  --vct-red:        #FF4655;
+  --vct-red-dim:    rgba(255, 70, 85, 0.10);
+  --vct-red-glow:   rgba(255, 70, 85, 0.25);
+  --vct-text:       #ECEBF0;
+  --vct-muted:      #7B7A8E;
+  --vct-input-bg:   #0F0F15;
+
+  display: block;
+}
+
+/* ── Subnav (barra com título + timer) ── */
+.vct-subnav {
+  border-bottom: 1px solid var(--vct-border);
+  margin-bottom: 1.5rem;
+}
+
+.vct-subnav-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--vct-muted) !important;
+  padding: 0;
+  cursor: default;
+}
+
+/* ── Countdown wrapper ── */
+.vct-countdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--vct-input-bg);
+  border: 1px solid var(--vct-border);
+  border-radius: 4px;
+  position: relative;
+}
+
+/* Acento vermelho no topo — mesma assinatura dos cards */
+.vct-countdown-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--vct-red);
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 0 8px var(--vct-red-glow);
+}
+
+.vct-countdown-label-top {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--vct-red);
+}
+
+/* ── Bloco individual de número ── */
+.vct-countdown-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Sobrescreve o estilo padrão do UIkit countdown */
+.vct-countdown-number.uk-countdown-number {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.75rem !important;
+  line-height: 1 !important;
+  color: var(--vct-text) !important;
+  background: transparent !important;
+  min-width: 2.5ch;
+  text-align: center;
+}
+
+.vct-countdown-unit {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-size: 0.55rem !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  color: var(--vct-muted) !important;
+  margin-top: 0.2rem !important;
+}
+
+.vct-countdown-sep {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: var(--vct-red) !important;
+  line-height: 1 !important;
+  padding-bottom: 0.75rem;
+  align-self: flex-start;
+  margin-top: 0.35rem;
+}
+
+/* ── Header do time ── */
+.vct-team-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 1rem 0 1.25rem;
+  border-bottom: 1px solid var(--vct-border);
+  margin-bottom: 1.5rem;
+}
+
+.vct-team-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--vct-text);
+  margin: 0;
+  text-align: center;
+  flex: 1;
+}
+
+.vct-team-avatar {
+  position: absolute;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--vct-border);
+  object-fit: cover;
+}
+
+.nickname-player {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--vct-red);
+}

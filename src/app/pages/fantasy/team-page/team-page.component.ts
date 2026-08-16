@@ -7,11 +7,12 @@ import { DataService } from 'src/app/services/data.service';
   templateUrl: './team-page.component.html',
   styleUrls: ['./team-page.component.css']
 })
-export class TeamPageComponent  implements OnInit {
-  public team!: Observable<any[]>;
+export class TeamPageComponent implements OnInit {
+  public team$!: Observable<any>;
 
-  constructor(private dataService: DataService) { } 
+  constructor(private dataService: DataService) { }
+
   ngOnInit(): void {
-    this.team = this.dataService.getTeam();
+    this.team$ = this.dataService.getTeam();
   }
 }

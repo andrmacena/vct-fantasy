@@ -10,8 +10,10 @@ import { Player } from 'src/app/models/Player';
 })
 export class PlayersPageComponent implements OnInit {
   public players!: Observable<Player[]>;
+  public filterNickname: string = '';
 
   constructor(private data: DataService) { }
+
   ngOnInit(): void {
     this.players = this.data.getPlayers();
   }

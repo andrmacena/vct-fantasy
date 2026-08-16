@@ -1,40 +1,143 @@
-<div class="uk-container">
-    <div uk-grid>
-        <div class="uk-width-1-2">
-            <div class="uk-card uk-card-muted">
-                <div class="uk-card-media-top">
-                    <br>
-                    <p class="uk-text-center"><img src="//owcdn.net/img/64169733ae9f1.png" class="uk-border-circle" alt=""/></p>
-                </div>
+<div class="vct-page">
+  <div class="vct-container">
+
+    <!-- ── Linha 1: Leaderboard + Destaque da semana ── -->
+    <div class="uk-grid uk-grid-medium" uk-grid>
+
+      <!-- Leaderboard da liga -->
+      <div class="uk-width-1-2@m">
+        <div class="vct-card">
+          <div class="vct-card-header">
+            <span class="vct-card-badge">
+              <span uk-icon="icon: crosshairs; ratio: 0.8"></span>
+            </span>
+            <div>
+              <p class="vct-card-label">Liga Atual</p>
+              <h2 class="vct-card-title">Liga VCT Resenha</h2>
             </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Media top</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum atque, possimus debitis dolore provident assumenda, veritatis, totam ea alias pariatur molestias! Corporis laborum error, ut nobis excepturi voluptas dolore enim.</p>
-                <p class="uk-text-center">
-                    <a href="#" class="uk-button uk-button-default">
-                        <span class="uk-icon uk-margin-small-right" uk-icon="icon: info"></span>
-                        Visualizar
-                    </a>
-                </p>
-            </div>
+          </div>
+
+          <div class="vct-card-media">
+            <img src="//owcdn.net/img/64169733ae9f1.png" alt="Liga VCT Resenha" />
+          </div>
+
+          <table class="vct-table">
+            <thead>
+              <tr>
+                <th class="vct-th-rank">#</th>
+                <th>Player</th>
+                <th>Time</th>
+                <th class="vct-th-score">Pontos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="vct-tr-highlight">
+                <td class="vct-td-rank vct-rank-1">1</td>
+                <td>loren</td>
+                <td>loren time</td>
+                <td class="vct-td-score">217 pts</td>
+              </tr>
+              <tr>
+                <td class="vct-td-rank vct-rank-2">2</td>
+                <td>teste</td>
+                <td>teste time</td>
+                <td class="vct-td-score">213 pts</td>
+              </tr>
+              <tr>
+                <td class="vct-td-rank vct-rank-3">3</td>
+                <td>awareness</td>
+                <td>awareness time</td>
+                <td class="vct-td-score">137 pts</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="uk-width-1-2">
-            <div class="uk-card uk-card-muted">
-                <div class="uk-card-media-top">
-                    <br>
-                    <p class="uk-text-center"><img src="//owcdn.net/img/641697212684c.png" class="uk-border-circle" alt=""/></p>
-                </div>
+      </div>
+
+      <!-- Melhor player da semana 3 -->
+      <div class="uk-width-1-2@m">
+        <div class="vct-card vct-card-featured">
+          <div class="vct-card-header">
+            <span class="vct-card-badge">
+              <span uk-icon="icon: star; ratio: 0.8"></span>
+            </span>
+            <div>
+              <p class="vct-card-label">Destaque</p>
+              <h2 class="vct-card-title">Melhor Player — Semana 3</h2>
             </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Media top</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum atque, possimus debitis dolore provident assumenda, veritatis, totam ea alias pariatur molestias! Corporis laborum error, ut nobis excepturi voluptas dolore enim.</p>
-                <p class="uk-text-center">
-                    <a href="#" class="uk-button uk-button-default">
-                        <span class="uk-icon uk-margin-small-right" uk-icon="icon: info"></span>
-                        Visualizar
-                    </a>
-                </p>
+          </div>
+
+          <div class="vct-card-media">
+            <img src="//owcdn.net/img/641697212684c.png" alt="Melhor player da semana 3" />
+          </div>
+
+          <div class="vct-card-body">
+            <div class="vct-stat-row">
+              <span class="vct-stat-label">Pontuação geral</span>
+              <span class="vct-stat-value">86 pts</span>
             </div>
+          </div>
         </div>
+      </div>
+
     </div>
+
+    <!-- ── Linha 2: Semana 5 + Novidades ── -->
+    <div class="uk-grid uk-grid-medium uk-margin-medium-top" uk-grid>
+
+      <!-- Melhor player da semana 5 -->
+      <div class="uk-width-1-4@m">
+        <div class="vct-card">
+          <div class="vct-card-header">
+            <span class="vct-card-badge">
+              <span uk-icon="icon: star; ratio: 0.8"></span>
+            </span>
+            <div>
+              <p class="vct-card-label">Destaque</p>
+              <h2 class="vct-card-title">Melhor Player — Semana 5</h2>
+            </div>
+          </div>
+
+          <div class="vct-card-media">
+            <img src="//owcdn.net/img/641697212684c.png" alt="Melhor player da semana 5" />
+          </div>
+
+          <div class="vct-card-body">
+            <div class="vct-stat-row">
+              <span class="vct-stat-label">Pontuação geral</span>
+              <span class="vct-stat-value">86 pts</span>
+            </div>
+            <a href="#" class="vct-btn-outline vct-btn-sm">
+              <span uk-icon="icon: info; ratio: 0.8"></span>
+              Visualizar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Novidades do VCT Fantasy -->
+      <div class="uk-width-expand@m">
+        <div class="vct-card vct-card-news">
+          <div class="vct-card-header">
+            <span class="vct-card-badge">
+              <span uk-icon="icon: bell; ratio: 0.8"></span>
+            </span>
+            <div>
+              <p class="vct-card-label">Novidades</p>
+              <h2 class="vct-card-title">VCT Fantasy</h2>
+            </div>
+          </div>
+
+          <div class="vct-card-body vct-card-body-news">
+            <div class="vct-news-item">
+              <span class="vct-news-dot"></span>
+              <p>Agora você pode visualizar o desempenho dos seus jogadores em tempo real!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </div>
