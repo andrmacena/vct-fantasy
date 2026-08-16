@@ -1,0 +1,103 @@
+/* ─────────────────────────────────────────────
+   VCT Fantasy — Players Page
+   ───────────────────────────────────────────── */
+
+/* ── Tokens ── */
+:host {
+  --vct-bg:       #0B0B10;
+  --vct-card:     #18181F;
+  --vct-border:   #2A2A36;
+  --vct-red:      #FF4655;
+  --vct-red-dim:  rgba(255, 70, 85, 0.12);
+  --vct-red-glow: rgba(255, 70, 85, 0.25);
+  --vct-text:     #ECEBF0;
+  --vct-muted:    #7B7A8E;
+  --vct-input-bg: #0F0F15;
+
+  display: block;
+}
+
+/* ── Search bar ── */
+.vct-search-bar {
+  padding: 1.25rem 0 1.5rem;
+  border-bottom: 1px solid var(--vct-border);
+  margin-bottom: 1.5rem;
+}
+
+.vct-search-wrap {
+  position: relative;
+}
+
+.vct-search-wrap .uk-form-icon {
+  color: var(--vct-muted);
+  transition: color 0.15s ease;
+  pointer-events: none;
+}
+
+.vct-search-wrap:focus-within .uk-form-icon {
+  color: var(--vct-red);
+}
+
+.uk-input.vct-search-input {
+  background: var(--vct-input-bg) !important;
+  border: 1px solid var(--vct-border) !important;
+  border-radius: 4px !important;
+  color: var(--vct-text) !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.9rem !important;
+  height: 48px !important;
+  padding-left: 2.75rem !important;
+  padding-right: 2.75rem !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.uk-input.vct-search-input::placeholder {
+  color: var(--vct-muted) !important;
+  opacity: 0.6;
+}
+
+.uk-input.vct-search-input:focus {
+  border-color: var(--vct-red) !important;
+  box-shadow: 0 0 0 3px var(--vct-red-dim) !important;
+  outline: none !important;
+}
+
+/* Botão limpar (X) */
+.vct-search-clear {
+  position: absolute;
+  right: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--vct-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s ease;
+  z-index: 1;
+}
+
+.vct-search-clear:hover {
+  color: var(--vct-red);
+}
+
+/* ── Empty state ── */
+.vct-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 4rem 1rem;
+  color: var(--vct-muted);
+  text-align: center;
+}
+
+.vct-empty p {
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.vct-empty strong {
+  color: var(--vct-text);
+}

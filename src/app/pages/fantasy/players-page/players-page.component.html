@@ -1,27 +1,53 @@
 <div class="uk-container">
-    <nav class="uk-navbar-container uk-margin-small-top uk-margin-small-bottom" uk-navbar>
-        <div class="uk-navbar-center">
-            <ul class="uk-navbar-nav">
-                <div class="uk-margin">
-                    <input class="uk-input" type="text" placeholder="Input" aria-label="Input">
-                </div>
-            </ul>
-        </div>
-    </nav>
-</div>
-<div class="uk-container">
-    <div uk-grid>
-        <div class="uk-width-1-4" *ngFor="let player of players | async">
-            <div class="uk-card uk-card-muted">
-                <div class="uk-card-media-top">
-                    <br>
-                    <p class="uk-text-center"><img [src]="player.pathProfile ? player.pathProfile : 'assets/avatar_placeholder.png'" class="uk-border-circle" alt="Foto jogador" width="200px" height="200px" /></p>
-                </div>
-            </div>
-            <div class="uk-card-body uk-padding-remove">
-                <h3 class="uk-card-title uk-text-center">{{player.nickname}}</h3>
-                <p class="uk-text-center">Pontuação geral última semana: {{player.score}}</p>
-            </div>
-        </div>
+  <div class="vct-search-bar">
+    <div class="vct-search-wrap uk-inline uk-width-1-1">
+      <span class="uk-form-icon" uk-icon="icon: search; ratio: 0.85"></span>
+      <input
+        class="uk-input vct-search-input"
+        type="text"
+        placeholder="Buscar player pelo nickname..."
+        aria-label="Buscar player"
+        [(ngModel)]="filterNickname"
+      />
+      <span
+        class="vct-search-clear"
+        *ngIf="filterNickname"
+        (click)="filterNickname = ''"
+        uk-icon="icon: close; ratio: 0.75"
+      ></span>
     </div>
+  </div>
+</div>
+
+<div class="uk-container">
+
+  <div class="vct-empty" *ngIf="(players | async | filterByNickname: filterNickname)?.length === 0">
+    <span uk-icon="icon: search; ratio: 1.5"></span>
+    <p>Nenhum player encontrado para <strong>"{{ filterNickname }}"</strong></p>
+  </div>
+
+  <div uk-grid>
+    <div class="uk-width-1-4"
+         *ngFor="let player of players | async | filterByNickname: filterNickname">
+      <div class="uk-card uk-card-muted">
+        <div class="uk-card-media-top">
+          <br>
+          <p class="uk-text-center">
+            <img
+              [src]="player.pathProfile ? player.pathProfile : 'assets/avatar_placeholder.png'"
+              class="uk-border-circle"
+              alt="Foto jogador"
+              width="200px"
+              height="200px"
+            />
+          </p>
+        </div>
+      </div>
+      <div class="uk-card-body uk-padding-remove">
+        <h3 class="uk-card-title uk-text-center">{{ player.nickname }}</h3>
+        <p class="uk-text-center">Pontuação geral última semana: {{ player.score }}</p>
+      </div>
+    </div>
+  </div>
+
 </div>

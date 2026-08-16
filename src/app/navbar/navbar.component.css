@@ -1,0 +1,208 @@
+/* ─────────────────────────────────────────────
+   VCT Fantasy — Navbar
+   Segue o mesmo design system das páginas de auth
+   ───────────────────────────────────────────── */
+
+/* ── Tokens ── */
+:host {
+  --vct-bg:         #0B0B10;
+  --vct-navbar-bg:  #0F0F15;
+  --vct-border:     #2A2A36;
+  --vct-red:        #FF4655;
+  --vct-red-dim:    rgba(255, 70, 85, 0.10);
+  --vct-red-dark:   #e63040;
+  --vct-text:       #ECEBF0;
+  --vct-muted:      #7B7A8E;
+  --vct-nav-height: 60px;
+
+  display: block;
+}
+
+/* ── Navbar shell ── */
+.vct-navbar {
+  width: 100%;
+  height: var(--vct-nav-height);
+  background-color: var(--vct-navbar-bg);
+  border-bottom: 1px solid var(--vct-border);
+  position: relative;
+}
+
+/* Linha de acento vermelha no topo — mesma assinatura dos cards */
+.vct-navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    180deg,
+    var(--vct-red) 0%,
+    rgba(255, 70, 85, 0.3) 40%,
+    transparent 100%
+  );
+}
+
+/* ── Inner container ── */
+.vct-navbar-container {
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Left side ── */
+.vct-navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* ── Logo ── */
+.vct-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.vct-logo-crosshair {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.vct-logo-text {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--vct-text);
+  line-height: 1;
+}
+
+.vct-logo-text strong {
+  color: var(--vct-red);
+  font-weight: 700;
+}
+
+.vct-logo:hover .vct-logo-text {
+  color: var(--vct-text);
+  text-decoration: none;
+}
+
+/* ── Nav links ── */
+.vct-nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.vct-nav-links li a {
+  display: flex;
+  align-items: center;
+  height: var(--vct-nav-height);
+  padding: 0 0.85rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--vct-muted);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.15s ease;
+}
+
+/* Indicador de hover/active — underline vermelho */
+.vct-nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0.85rem;
+  right: 0.85rem;
+  height: 2px;
+  background: var(--vct-red);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.18s ease;
+}
+
+.vct-nav-links li a:hover {
+  color: var(--vct-text);
+}
+
+.vct-nav-links li a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Estado ativo via routerLinkActive */
+.vct-nav-links li a.vct-nav-active {
+  color: var(--vct-text);
+}
+
+.vct-nav-links li a.vct-nav-active::after {
+  transform: scaleX(1);
+}
+
+/* ── Right side ── */
+.vct-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── User pill ── */
+.vct-user {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.85rem;
+  background: var(--vct-red-dim);
+  border: 1px solid var(--vct-border);
+  border-radius: 3px;
+  cursor: default;
+}
+
+.vct-user-icon {
+  color: var(--vct-red);
+  display: flex;
+  align-items: center;
+}
+
+.vct-user-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--vct-text);
+  letter-spacing: 0.03em;
+}
+
+/* ── Logout button ── */
+.vct-logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 1px solid var(--vct-border);
+  border-radius: 3px;
+  color: var(--vct-muted);
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.vct-logout:hover {
+  border-color: var(--vct-red);
+  color: var(--vct-red);
+  background: var(--vct-red-dim);
+  text-decoration: none;
+}

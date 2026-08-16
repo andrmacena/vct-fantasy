@@ -1,56 +1,58 @@
 <div class="uk-container">
-    <nav class="uk-navbar-container uk-margin-small-top uk-margin-small-bottom" uk-navbar>
-        <div class="uk-navbar-left">
-            <ul class="uk-navbar-nav">
-                <li class="uk-active">Meu time</li>
-            </ul>
-        </div>
-        <div class="uk-navbar-right">
+    <nav class="vct-subnav" uk-navbar>
+        <div class="uk-navbar-center uk-margin-small-bottom">
 
-            <div class="uk-grid-small uk-child-width-auto uk-margin" uk-grid uk-countdown="date: {2026-05-01T14:00:00+00:00}">
-                <div>
-                    <div class="uk-countdown-number uk-countdown-days"></div>
-                    <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Days</div>
-                </div>
-                <div class="uk-countdown-separator">:</div>
-                <div>
-                    <div class="uk-countdown-number uk-countdown-hours"></div>
-                    <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Hours</div>
-                </div>
-                <div class="uk-countdown-separator">:</div>
-                <div>
-                    <div class="uk-countdown-number uk-countdown-minutes"></div>
-                    <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">Minutes</div>
+            <!-- ── Timer VCT ── -->
+            <div class="vct-countdown-wrapper">
+                <span class="vct-countdown-label-top">Próximo lock</span>
+                <div class="uk-grid-small uk-child-width-auto uk-flex-middle" uk-grid
+                    uk-countdown="date: 2026-08-17T17:00:00+00:00">
+                    <div class="vct-countdown-block">
+                        <div class="uk-countdown-number vct-countdown-number uk-countdown-days"></div>
+                        <div class="uk-countdown-label vct-countdown-unit uk-visible@s">Dias</div>
+                    </div>
+                    <div class="uk-countdown-separator vct-countdown-sep">:</div>
+                    <div class="vct-countdown-block">
+                        <div class="uk-countdown-number vct-countdown-number uk-countdown-hours"></div>
+                        <div class="uk-countdown-label vct-countdown-unit uk-visible@s">Horas</div>
+                    </div>
+                    <div class="uk-countdown-separator vct-countdown-sep">:</div>
+                    <div class="vct-countdown-block">
+                        <div class="uk-countdown-number vct-countdown-number uk-countdown-minutes"></div>
+                        <div class="uk-countdown-label vct-countdown-unit uk-visible@s">Min</div>
+                    </div>
                 </div>
             </div>
+
         </div>
     </nav>
 </div>
-<div class="uk-container uk-width-1">
+
+<div class="uk-container" *ngIf="team$ | async as team">
+
+    <!-- ── Header do time: nome centralizado + avatar à direita ── -->
+    <div class="vct-team-header">
+        <h2 class="vct-team-name">{{ team.name || 'Meu Time' }}</h2>
+        <img [src]="'assets/avatar_placeholder.png'" class="vct-team-avatar" alt="Foto do time" width="50"
+            height="50" />
+    </div>
+
     <div uk-grid>
-        <div class="uk-width-1-5" *ngFor="let team of team | async">
+        <div class="uk-width-1-5" *ngFor="let player of team.players">
             <div class="uk-card uk-card-muted">
                 <div class="uk-card-media-top">
                     <br>
-                    <p class="uk-text-center"><img src="//owcdn.net/img/64169733ae9f1.png" class="uk-border-circle" alt=""/></p>
+                    <p class="uk-text-center">
+                        <img [src]="player.pathProfile ? player.pathProfile : 'assets/avatar_placeholder.png'"
+                            class="uk-border-circle" alt="Foto jogador" width="200px" height="200px" />
+                    </p>
                 </div>
             </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title uk-text-center">{{team.nick}}</h3>
-                <ul class="uk-list uk-list-divider">
-                    <li>Headshot: {{team.hs}}%</li>
-                    <li>Kills: {{team.kills}}</li>
-                    <li>Deaths: {{team.deaths}}</li>
-                    <li>Assists: {{team.assists}}</li>
-                    <li>Pontuação geral: 20</li>
-                </ul>
-                <p class="uk-text-center">
-                    <a href="#" class="uk-button uk-button-default uk-button-small">
-                        <span class="uk-icon uk-margin-small-right" uk-icon="icon: info; ratio: 0.8"></span>
-                        Info
-                    </a>
-                </p>
+            <div class="uk-card-body uk-padding-remove">
+                <h3 class="uk-card-title uk-text-center nickname-player">{{player.nickname}}</h3>
+                <p class="uk-text-center">Pontuação geral última semana: {{player.score}}</p>
             </div>
         </div>
     </div>
+
 </div>
