@@ -9,8 +9,8 @@ import { DataService } from 'src/app/services/data.service';
 export class SignUpPageComponent {
   constructor(private dataService: DataService, private router: Router) { }
 
-  signUp(email: string, password: string) {
-    this.dataService.createUser(email, password).subscribe({
+  signUp(email: string, password: string, nickname: string) {
+    this.dataService.createUser(email, password, nickname).subscribe({
       next: () => this.router.navigate(['/login']),
       error: () => alert('Falha ao criar usuário')
     });

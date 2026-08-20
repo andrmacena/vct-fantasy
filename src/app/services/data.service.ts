@@ -29,6 +29,13 @@ export class DataService {
         return this.http.get<any[]>(`${this.baseUrl}/v1/teams`, { headers });
     }
 
+    getGeneralLeaderboard() {
+        const token = this.tokenStorage.getToken();
+        const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+        return this.http.get<any[]>(`${this.baseUrl}/v1/leaderboard`, { headers });
+    }
+
     getToken(email: string, password: string) {
         return this.http.post(`${this.baseUrl}/v1/authentication/login`, {
             email,
@@ -36,10 +43,11 @@ export class DataService {
         });
     }
 
-    createUser(email: string, password: string) {
+    createUser(email: string, password: string, nickname: string) {
         return this.http.post(`${this.baseUrl}/v1/users`, {
             email,
-            password
+            password,
+            nickname
         });
     }
 }

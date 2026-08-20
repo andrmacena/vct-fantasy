@@ -34,7 +34,7 @@
           <br>
           <p class="uk-text-center">
             <img
-              [src]="player.pathProfile ? player.pathProfile : 'assets/avatar_placeholder.png'"
+              [src]="player.pathProfile && player.pathProfile !== 'sem foto' ? player.pathProfile : 'assets/avatar_placeholder.png'"
               class="uk-border-circle"
               alt="Foto jogador"
               width="200px"

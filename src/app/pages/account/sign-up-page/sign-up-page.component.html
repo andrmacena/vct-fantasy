@@ -45,6 +45,21 @@
       </div>
     </div>
 
+    <!-- Nickname -->
+    <div class="vct-field">
+      <label class="vct-label" for="vct-nickname">Nickname</label>
+      <div class="vct-input-wrap uk-inline uk-width-1-1">
+        <span class="uk-form-icon" uk-icon="icon: user; ratio: 0.85"></span>
+        <input
+          #nickname
+          id="vct-nickname"
+          class="uk-input vct-input uk-width-1-1"
+          type="text"
+          placeholder="nickname"
+        />
+      </div>
+    </div>
+
     <!-- Senha -->
     <div class="vct-field">
       <label class="vct-label" for="vct-password">Senha</label>
@@ -65,7 +80,7 @@
     <!-- Cadastrar -->
     <button
       class="vct-btn-primary"
-      (click)="signUp(email.value, password.value)"
+      (click)="signUp(email.value, password.value, nickname.value)"
     >
       Criar minha conta
     </button>
