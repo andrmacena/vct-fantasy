@@ -1,0 +1,218 @@
+/* ─────────────────────────────────────────────
+   VCT Fantasy — Leaderboard Page
+   ───────────────────────────────────────────── */
+
+/* ── Tokens ── */
+:host {
+  --vct-bg:         #0B0B10;
+  --vct-card:       #18181F;
+  --vct-input-bg:   #0F0F15;
+  --vct-border:     #2A2A36;
+  --vct-red:        #FF4655;
+  --vct-red-dim:    rgba(255, 70, 85, 0.10);
+  --vct-red-glow:   rgba(255, 70, 85, 0.25);
+  --vct-text:       #ECEBF0;
+  --vct-muted:      #7B7A8E;
+  --vct-gold:       #F0B429;
+  --vct-gold-dim:   rgba(240, 180, 41, 0.08);
+  --vct-silver:     #A0AEC0;
+  --vct-silver-dim: rgba(160, 174, 192, 0.06);
+  --vct-bronze:     #C07A3A;
+  --vct-bronze-dim: rgba(192, 122, 58, 0.06);
+
+  display: block;
+}
+
+/* ── Container ── */
+.vct-leaderboard-container {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+/* ── Page header ── */
+.vct-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--vct-border);
+  position: relative;
+}
+
+/* Linha de acento — mesma assinatura dos cards */
+.vct-page-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 4rem;
+  height: 2px;
+  background: var(--vct-red);
+  box-shadow: 0 0 10px var(--vct-red-glow);
+}
+
+.vct-page-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--vct-muted);
+  margin: 0 0 0.2rem;
+}
+
+.vct-page-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--vct-text);
+  margin: 0;
+  line-height: 1;
+}
+
+.vct-card-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--vct-red-dim);
+  border: 1px solid rgba(255, 70, 85, 0.2);
+  border-radius: 3px;
+  color: var(--vct-red);
+  flex-shrink: 0;
+}
+
+/* ── Table wrapper ── */
+.vct-table-wrapper {
+  background: var(--vct-card);
+  border: 1px solid var(--vct-border);
+  border-top: 2px solid var(--vct-red);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.vct-table-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 2rem;
+  width: 3rem;
+  height: 2px;
+  background: var(--vct-red);
+  box-shadow: 0 0 12px var(--vct-red-glow);
+}
+
+/* ── Caption ── */
+.uk-table.vct-table caption.vct-table-caption {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--vct-muted);
+  text-align: left;
+  padding: 1rem 1.5rem 0.75rem;
+  caption-side: top;
+}
+
+/* ── Header ── */
+.uk-table.vct-table thead tr {
+  background: var(--vct-input-bg);
+}
+
+.uk-table.vct-table th {
+  font-family: 'Rajdhani', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  color: var(--vct-muted) !important;
+  border-bottom: 1px solid var(--vct-border) !important;
+  padding: 0.75rem 1.5rem !important;
+}
+
+/* ── Cells ── */
+.uk-table.vct-table td {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: var(--vct-text);
+  padding: 0.85rem 1.5rem !important;
+  vertical-align: middle;
+}
+
+/* Divisor entre linhas */
+.uk-table-divider.vct-table > :not(:first-child) > tr,
+.uk-table-divider.vct-table > tr:not(:first-child) {
+  border-top: 1px solid var(--vct-border) !important;
+}
+
+/* Hover genérico */
+.uk-table.vct-table tbody tr {
+  transition: background 0.12s ease;
+}
+
+.uk-table.vct-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* ── Coluna de ranking ── */
+.vct-th-rank,
+.vct-td-rank {
+  width: 56px;
+  text-align: center !important;
+  padding-left: 1.5rem !important;
+  padding-right: 0 !important;
+}
+
+.vct-td-rank {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--vct-muted);
+}
+
+/* ── Coluna de pontuação ── */
+.vct-th-score,
+.vct-td-score {
+  text-align: right !important;
+}
+
+.vct-td-score {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--vct-muted);
+}
+
+/* ── Medalhas de ranking ── */
+.vct-rank-1 { color: var(--vct-gold) !important; }
+.vct-rank-2 { color: var(--vct-silver) !important; }
+.vct-rank-3 { color: var(--vct-bronze) !important; }
+
+/* ── Linhas com destaque de pódio ── */
+.vct-tr-gold {
+  background: var(--vct-gold-dim) !important;
+}
+
+.vct-tr-gold .vct-td-score {
+  color: var(--vct-gold) !important;
+}
+
+.vct-tr-silver {
+  background: var(--vct-silver-dim) !important;
+}
+
+.vct-tr-silver .vct-td-score {
+  color: var(--vct-silver) !important;
+}
+
+.vct-tr-bronze {
+  background: var(--vct-bronze-dim) !important;
+}
+
+.vct-tr-bronze .vct-td-score {
+  color: var(--vct-bronze) !important;
+}

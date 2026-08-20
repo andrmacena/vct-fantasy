@@ -1,34 +1,47 @@
-<div class="uk-container">
-    <table class="uk-table uk-table-divider uk-margin-small-top">
-        <caption class="uk-text-center">Table Caption</caption>
-        <thead>
-            <tr>
-                <th>Player</th>
-                <th>Titulo time</th>
-                <th>Pontuação</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Table Data</td>
-                <td>Table Data</td>
-                <td>Table Data</td>
-            </tr>
-            <tr>
-                <td>Table Data</td>
-                <td>Table Data</td>
-                <td>Table Data</td>
-            </tr>
-            <tr>
-                <td>Table Data</td>
-                <td>Table Data</td>
-                <td>Table Data</td>
-            </tr>
-            <tr>
-                <td>Table Data</td>
-                <td>Table Data</td>
-                <td>Table Data</td>
-            </tr>
-        </tbody>
+<div class="uk-container vct-leaderboard-container">
+
+  <!-- Header da página -->
+  <div class="vct-page-header">
+    <div class="vct-page-header-left">
+      <p class="vct-page-label">Classificação geral</p>
+      <h1 class="vct-page-title">Leaderboard</h1>
+    </div>
+    <span class="vct-card-badge">
+      <span uk-icon="icon: trophy; ratio: 0.85"></span>
+    </span>
+  </div>
+
+  <!-- Tabela -->
+  <div class="vct-table-wrapper">
+    <table class="uk-table uk-table-divider vct-table">
+      <caption class="vct-table-caption">Liga VCT Fantasy</caption>
+      <thead>
+        <tr>
+          <th class="vct-th-rank">#</th>
+          <th>Player</th>
+          <th>Título do Time</th>
+          <th class="vct-th-score">Pontuação</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="leaderboard$ | async as leaderboard">
+        <tr
+          *ngFor="let player of leaderboard.data | sortByScore; let i = index"
+          [class.vct-tr-gold]="i === 0"
+          [class.vct-tr-silver]="i === 1"
+          [class.vct-tr-bronze]="i === 2"
+        >
+          <td
+            class="vct-td-rank"
+            [class.vct-rank-1]="i === 0"
+            [class.vct-rank-2]="i === 1"
+            [class.vct-rank-3]="i === 2"
+          >{{ i + 1 }}</td>
+          <td>{{ player.nickname }}</td>
+          <td>{{ player.teamName }}</td>
+          <td class="vct-td-score">{{ player.totalScore }}</td>
+        </tr>
+      </tbody>
     </table>
+  </div>
+
 </div>

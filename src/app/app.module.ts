@@ -12,6 +12,7 @@ import { TeamPageComponent } from './pages/fantasy/team-page/team-page.component
 import { LeaderboardPageComponent } from './pages/fantasy/leaderboard-page/leaderboard-page.component';
 import { HomePageComponent } from './pages/fantasy/home-page/home-page.component';
 import { FilterByNicknamePipe } from './pages/fantasy/players-page/nickname-pipe';
+import { SortByScorePipe } from './pages/fantasy/leaderboard-page/sortbyscore-pipe';
 import { AppRoutingModule } from './app-routing.modules';
 import { FramePageComponent } from './pages/master/frame-page/frame-page.component';
 import { AuthService } from './services/auth.service';
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     TeamPageComponent,
     LeaderboardPageComponent,
     HomePageComponent,
-    FilterByNicknamePipe
+    FilterByNicknamePipe,
+    SortByScorePipe
   ],
   imports: [
     BrowserModule,
