@@ -19,7 +19,7 @@ export class DataService {
         const token = this.tokenStorage.getToken();
         const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
-        return this.http.get<Player[]>(`${this.baseUrl}/v1/players`, { headers });
+        return this.http.get<any[]>(`${this.baseUrl}/v1/players`, { headers });
     }
 
     getTeam() {
