@@ -15,7 +15,7 @@ export class AuthService {
     login(email: string, password: string) {
         return this.dataService.getToken(email, password).pipe(
             tap((response: any) => {
-                const token = response?.token;
+                const token = response?.data[0]?.token;
                 if (token) {
                     this.tokenStorage.setToken(token);
                 }
